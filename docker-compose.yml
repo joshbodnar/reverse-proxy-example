@@ -1,0 +1,21 @@
+version: "3.8"
+
+services: 
+  proxy:
+    image: nginx:latest
+    ports: 
+      - "80:80"
+    volumes:
+      - "./proxy:/etc/nginx"
+  service-a:
+    image: nginx:latest
+    volumes:
+      - "./a.html:/usr/share/nginx/html/index.html"
+  service-b:
+    image: nginx:latest
+    volumes:
+      - "./b.html:/usr/share/nginx/html/index.html"
+  service-c:
+    image: nginx:latest
+    volumes:
+      - "./c.html:/usr/share/nginx/html/index.html"
